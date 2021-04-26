@@ -1,2 +1,11 @@
 *.hcl
 Practice1 - Make Resources/.terraform
+Practice2 - Use Variable/.terraform
+Practice3 - Variable Input/.terraform
+Practice4 - Use Module/.terraform
+Practice5 - Functions/.terraform
+Practice6 - Use Terraform Cloud/.terraform
+
+Practice1 - Make Resources/key
+*.tfstate
+*.backup
