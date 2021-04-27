@@ -7,4 +7,6 @@ vmsku = "F4s_v2"
 
 vmcount = 2
 
-localips = ["27.122.140.10", "39.115.79.199"]
+localips = ["<your ip>", "<your coworker's ip"]
+
+password = "<your password>"
