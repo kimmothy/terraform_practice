@@ -1,9 +1,5 @@
 variable location{
     type = map
-    default = {
-        long = "koreacentral"
-        short = "kc"
-    }
 }
 
 variable vmsku{

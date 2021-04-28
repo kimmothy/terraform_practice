@@ -1,6 +1,6 @@
 resource "azurerm_network_security_group" "sg_chan_sample" {
   name                = "sg-chan-sample"
-  location            = azurerm_resource_group.rg_chan_sample.location["long"]
+  location            = var.location["long"]
   resource_group_name = azurerm_resource_group.rg_chan_sample.name
 }
 

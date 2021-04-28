@@ -21,7 +21,7 @@ resource "azurerm_linux_virtual_machine" "vm_chan_sample" {
   disable_password_authentication = false
   admin_password = var.password
   network_interface_ids = [
-    azurerm_network_interface.nic_chan_sample.id,
+    azurerm_network_interface.nic_chan_sample[count.index].id,
   ]
 
   os_disk {
