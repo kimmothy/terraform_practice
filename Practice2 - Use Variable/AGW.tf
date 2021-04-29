@@ -1,9 +1,8 @@
 resource "azurerm_public_ip" "pip_chan_sample" {
-  count = var.vmcount
   name                = "pip-chan-sample-${var.location["short"]}"
   resource_group_name = azurerm_resource_group.rg_chan_sample.name
-  location            = azurerm_resource_group.rg_chan_sample.location["long"]
-  allocation_method   = "Static"
+  location            = azurerm_resource_group.rg_chan_sample.location
+  allocation_method   = "Dynamic"
 
 }
 
@@ -19,7 +18,7 @@ locals {
 
 resource "azurerm_application_gateway" "network" {
   name                = "example-appgateway"
-  resource_group_name = azurerm_resource_group.example.name
+  resource_group_name = azurerm_resource_group.rg_chan_sample.name
   location            = var.location["long"]
 
   sku {
@@ -30,7 +29,7 @@ resource "azurerm_application_gateway" "network" {
 
   gateway_ip_configuration {
     name      = "my-gateway-ip-configuration"
-    subnet_id = azurerm_subnet.frontend.id
+    subnet_id = azurerm_subnet.AGW_subnet.id
   }
 
   frontend_port {
@@ -40,7 +39,7 @@ resource "azurerm_application_gateway" "network" {
 
   frontend_ip_configuration {
     name                 = local.frontend_ip_configuration_name
-    public_ip_address_id = azurerm_public_ip.example.id
+    public_ip_address_id = azurerm_public_ip.pip_chan_sample.id
   }
 
   backend_address_pool {

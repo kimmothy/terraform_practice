@@ -1,12 +1,12 @@
 resource "azurerm_network_interface" "nic_chan_sample" {
   count = var.vmcount
   name                = "nic-chan-sample-${var.location["short"]}-${count.index}"
-  location            = azurerm_resource_group.rg_chan_sample.location["long"]
+  location            = azurerm_resource_group.rg_chan_sample.location
   resource_group_name = azurerm_resource_group.rg_chan_sample.name
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = azurerm_subnet.external[count.index].id
+    subnet_id                     = azurerm_subnet.web_subnet[count.index].id
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -15,7 +15,7 @@ resource "azurerm_linux_virtual_machine" "vm_chan_sample" {
   count = var.vmcount
   name                = "vm-chan-sample-${var.location["short"]}-${count.index}"
   resource_group_name = azurerm_resource_group.rg_chan_sample.name
-  location            = azurerm_resource_group.rg_chan_sample.location["long"]
+  location            = azurerm_resource_group.rg_chan_sample.location
   size                = "Standard_F2"
   admin_username      = "adminuser"
   disable_password_authentication = false
