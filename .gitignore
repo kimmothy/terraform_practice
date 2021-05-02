@@ -1,5 +1,6 @@
 *.hcl
 *.info
+*.pem
 Practice1 - Make Resources/.terraform
 Practice2 - Use Variable/.terraform
 Practice3 - Functions/.terraform
