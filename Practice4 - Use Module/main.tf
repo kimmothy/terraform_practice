@@ -11,3 +11,7 @@ module "sample_module" {
     cidr_block = "10.0.0.0/16"
     subnet_count = "8"
 }
+
+output "output_from_module" {
+    value = module.sample_module.output_sample
+}
