@@ -11,3 +11,4 @@ Practice1 - Make Resources/key
 *.tfstate
 *.backup
 Practice2 - Use Variable/vars.tfvars
+Practice4 - Use Module/variable.tfvars
