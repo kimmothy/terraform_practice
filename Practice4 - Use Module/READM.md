@@ -1,1 +1,1 @@
-terraform practice
+terraform module practice

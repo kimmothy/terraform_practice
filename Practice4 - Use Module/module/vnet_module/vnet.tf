@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "vnet_chan_sample" {
 
 
 resource "azurerm_subnet" "web_subnet" {
-  count = var.subnet_count
+  count                = var.subnet_count
   name                 = "web_subnet_${count.index}"
   resource_group_name  = azurerm_resource_group.rg_chan_sample.name
   virtual_network_name = azurerm_virtual_network.vnet_chan_sample.name
