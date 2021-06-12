@@ -26,7 +26,7 @@ resource "azurerm_linux_virtual_machine" "vm_chan_sample" {
   size                = "Standard_F2"
   admin_username      = "adminuser"
   disable_password_authentication = false
-  admin_password = "{your password}"
+  admin_password = "{your_password}"
   network_interface_ids = [
     azurerm_network_interface.nic_chan_sample.id,
   ]

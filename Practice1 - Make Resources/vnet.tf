@@ -11,11 +11,3 @@ resource "azurerm_subnet" "external" {
   virtual_network_name = azurerm_virtual_network.vnet_chan_sample.name
   address_prefixes     = ["172.16.0.0/24"]
 }
-
-resource "azurerm_subnet" "internal" {
-  name                 = "internal"
-  resource_group_name  = azurerm_resource_group.rg_chan_sample.name
-  virtual_network_name = azurerm_virtual_network.vnet_chan_sample.name
-  address_prefixes     = ["172.16.1.0/24"]
-}
-
